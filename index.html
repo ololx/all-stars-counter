@@ -1,69 +1,64 @@
 <html xmlns="http://www.w3.org/2000/svg">
 	<head>
 		<meta http-equiv="Content-Type" content="image/svg+xml" />
+		<script src="script/Counter.js"></script>
+		<script src="script/HttpClient.js"></script>
+		<script src="script/Star.js"></script>
 		<script>
-			var allStarsCount = 0;
-			function httpGetAsync(theUrl, callback) {
-				var xmlHttp = new XMLHttpRequest();
-				xmlHttp.onreadystatechange = function() { 
-				
-				if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-					callback(JSON.parse(xmlHttp.response));
+			const starsCounter = Counter.ofInitialZero();
+			const githubApiClient = HttpClient.newInstance("https://api.github.com");
+			
+			function updateStarImage(starsCount) {
+				let starsImage = document.getElementById('star');
+				if (typeof starsImage == "undefined" || starsImage == null) {
+					starsImage = document.createElement('img');
+					starsImage.setAttribute("id", "star");
+					document.getElementsByTagName('BODY')[0].appendChild(starsImage);
 				}
-				
-				xmlHttp.open("GET", theUrl, true);
-				xmlHttp.send(null);
+
+				starsImage.src = 'data:image/svg+xml,' 
+					+ encodeURIComponent(`
+						<svg xmlns="http://www.w3.org/2000/svg" width="165" height="120">
+								<polygon points = "90,5 30,120 165,50 15,50 150,120" fill = "yellow"/>
+								<text fill="red" font-size="60" font-family="Times New Roman" x="58" y="90">${starsCount}</text>
+						</svg>
+					`);
 			}
 
-			function innerRepos(response) {
-				const body = document.getElementsByTagName('BODY')[0];
-						
-					for(var k in response) {
-						console.log(k, response[k]);
-						allStarsCount += response[k]["stargazers_count"];
-					}
-						var array = document.getElementsByTagName('img');
-						var img = null;
-						if (typeof array != "undefined" && array != null && array.length != null && array.length > 0) {
-						    img = array[0];
-							
-						} else {
-							img = document.createElement('img');
-						}
-						img.src = 'data:image/svg+xml,' + encodeURIComponent(`
-						  <svg xmlns="http://www.w3.org/2000/svg" width="100" height="50">
-						    <foreignObject width="100%" height="100%">
-						      <div xmlns="http://www.w3.org/1999/xhtml" style="border:1px solid red;padding:0px;">
-						        Profile ${allStarsCount}★
-						      </div>
-						    </foreignObject>
-						  </svg>
-							  `);
-						//img.src = `https://img.shields.io/badge/All_stars-${allStarsCount}★-informational?style=flat-square`;	
-						body.appendChild(img);
-						
-						/*var e = document.createElement('a');
-						        var href = 'data:image/svg+xml,' + encodeURIComponent(`
-						  <svg xmlns="http://www.w3.org/2000/svg" width="100" height="50">
-						    <foreignObject width="100%" height="100%">
-						      <div xmlns="http://www.w3.org/1999/xhtml" style="border:1px solid red;padding:0px;">
-						        Profile ${allStarsCount}★
-						      </div>
-						    </foreignObject>
-						  </svg>
-							  `);
-						        e.setAttribute('href', href);
-						        e.setAttribute('download', "dold");
-						        document.body.appendChild(e);
-						        e.click();
-						        document.body.removeChild(e);*/
-					
+			function innerRepo(response) {
+				starsCounter.increase(response["stargazers_count"]);
+				updateStarImage(starsCounter.value);
 			}
-			
-			httpGetAsync("https://api.github.com/users/ololx/repos", innerRepos);
-			httpGetAsync("https://api.github.com/users/innopolis-university-java-team/repos", innerRepos);
+
+			function innerRepos(response, excludeRepos) {
+				for(var k in response) {
+					if (excludeRepos.includes(response[k]["name"])) continue;
+
+					innerRepo(response[k])
+				}
+			}
+
+			function main() {
+				let url = new URL(window.location.href);
+
+				updateStarImage(0);
+
+				let excludeRepos = url.searchParams.getAll("exclude_repo");
+				if (!Array.isArray(excludeRepos)) {
+					excludeRepos = [];
+				}
+
+				let users = url.searchParams.getAll("user");
+				if (Array.isArray(users)) {
+					for(var user in users) {
+						console.log(users[user])
+						githubApiClient.requestGet(`users/${users[user]}/repos`, innerRepos, excludeRepos);
+					}
+				}
+			}
 		</script>
 	</head>
-	<body>
+	<body onload="main()">
+
 	</body>
 </html>
