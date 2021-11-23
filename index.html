@@ -3,10 +3,10 @@
 		<meta http-equiv="Content-Type" content="image/svg+xml" />
 		<script src="script/Counter.js"></script>
 		<script src="script/HttpClient.js"></script>
-		<script src="script/Star.js"></script>
 		<script>
-			const starsCounter = Counter.ofInitialZero();
-			const githubApiClient = HttpClient.newInstance("https://api.github.com");
+			let starsCounter = new Counter();
+			console.log(starsCounter.getValue());
+			let githubApiClient = HttpClient.newInstance("https://api.github.com");
 			
 			function updateStarImage(starsCount) {
 				let starsImage = document.getElementById('star');
@@ -27,7 +27,7 @@
 
 			function innerRepo(response) {
 				starsCounter.increase(response["stargazers_count"]);
-				updateStarImage(starsCounter.value);
+				updateStarImage(starsCounter.getValue());
 			}
 
 			function innerRepos(response, excludeRepos) {
