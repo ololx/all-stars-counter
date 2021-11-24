@@ -3,10 +3,9 @@
 		<meta http-equiv="Content-Type" content="image/svg+xml" />
 		<script src="script/Counter.js"></script>
 		<script src="script/HttpClient.js"></script>
-		<script src="script/Star.js"></script>
 		<script>
-			const starsCounter = Counter.ofInitialZero();
-			const githubApiClient = HttpClient.newInstance("https://api.github.com");
+			let starsCounter = new Counter();
+			let githubApiClient = new EndpointClient();
 			
 			function updateStarImage(starsCount) {
 				let starsImage = document.getElementById('star');
@@ -27,7 +26,7 @@
 
 			function innerRepo(response) {
 				starsCounter.increase(response["stargazers_count"]);
-				updateStarImage(starsCounter.value);
+				updateStarImage(starsCounter.getValue());
 			}
 
 			function innerRepos(response, excludeRepos) {
@@ -52,7 +51,16 @@
 				if (Array.isArray(users)) {
 					for(var user in users) {
 						console.log(users[user])
-						githubApiClient.requestGet(`users/${users[user]}/repos`, innerRepos, excludeRepos);
+						githubApiClient.sendGet(
+							`https://api.github.com/users/${users[user]}/repos`, 
+							function (res) {
+								res = JSON.parse(res);
+								for(var k in res) {
+									if (excludeRepos.includes(res[k]["name"])) continue;
+									innerRepo(res[k])
+								}
+							}
+						);
 					}
 				}
 			}

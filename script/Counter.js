@@ -1,54 +1,85 @@
 /**
- * The type Counter.
+ * The type Counter
  *
  * @author Alexander A. Kropotin
  * @project all-stars-counter
  * @created 21.11.2021 14:40
  */ 
-class Counter {
+var Counter = function(value = 0) {
 
-	static ofInitialZero() {
-		return new Counter(0);
-	}
+	/**
+	 * The counter value can be increased or decreased by n
+	 */
+	var _value = 0;
 
-	static of(initialValue) {
-		return new Counter(initialValue);
-	}
+	/**
+	 * The counter initial value
+	 */
+	var _initial = 0;
 
-	_value = 0;
+	/**
+	 * The counter value getter
+	 */
+	this.getValue = function() {
+		return _value;
+	};
 
-	constructor(initialValue) {
-		if (initialValue == null) console.error(`The value couldn't be ${initialValue}`);
-		else if (!Number.isInteger(initialValue)) console.error(`The value must be an integer`);
+	/**
+	 * Public method for increasing the counter value
+	 * @param value
+	 */
+	this.increase = function(value = 1) {
+		if (_checkValue(value)) {
+			_value += value;
+		}
+	};
 
-		this._value = initialValue;
-	}
+	/**
+	 * Public method for decreasing the counter value
+	 * @param value
+	 */
+	this.decrease = function(value = 1) {
+		if (_checkValue(value)) {
+			_value -= value;
+		}
+	};
 
-	get value() {
-		return this._value;
-	}
+	/**
+	 * Public method for reseting the counter value to initial
+	 */
+	this.reset = function() {
+		_value += _initial;
+	};
+	
+	/**
+	 * Private method for checking a value for validity.
+	 */
+	var _checkValue = function(value) {
+		if (value == null) {
+			console.error(`The value couldn't be ${value}`);
 
-	set value(value) {
-		this._value = value;
-	}
+			return false;
+		} else if (!Number.isInteger(value)) {
+			console.error(`The value must be an integer`);
+			return false;
+		}
 
-	increase() {
-		this.increase(1);
-	}
+		return true;
+		
+	};
 
-	increase(value) {
-		this._value += value;
-	}
 
-	decrease() {
-		this.decrease(1);
-	}
+	/**
+	 * Private constructor method.
+	 */
+	var _init = function(value = 1) {
+		if (_checkValue(value)) {
+			_initial = value;
+		}
 
-	decrease(value) {
-		this._value -= value;
-	}
+		value = _initial;
+	};
 
-	reset() {
-		this._value = 0;
-	}
+
+	_init(value);
 }
