@@ -5,8 +5,7 @@
 		<script src="script/HttpClient.js"></script>
 		<script>
 			let starsCounter = new Counter();
-			console.log(starsCounter.getValue());
-			let githubApiClient = HttpClient.newInstance("https://api.github.com");
+			let githubApiClient = new EndpointClient();
 			
 			function updateStarImage(starsCount) {
 				let starsImage = document.getElementById('star');
@@ -52,7 +51,16 @@
 				if (Array.isArray(users)) {
 					for(var user in users) {
 						console.log(users[user])
-						githubApiClient.requestGet(`users/${users[user]}/repos`, innerRepos, excludeRepos);
+						githubApiClient.sendGet(
+							`https://api.github.com/users/${users[user]}/repos`, 
+							function (res) {
+								res = JSON.parse(res);
+								for(var k in res) {
+									if (excludeRepos.includes(res[k]["name"])) continue;
+									innerRepo(res[k])
+								}
+							}
+						);
 					}
 				}
 			}
