@@ -30,13 +30,13 @@ const CONTENT_TYPES = {
 };
 
 /**
- * The type EndpointClient
+ * The type HttpQurey
  *
  * @author Alexander A. Kropotin
  * @project all-stars-counter
  * @created 21.11.2021 13:05
  */
-var EndpointClient = function(requestObjectFacroty, contentType) {
+var HttpQurey = function(requestObjectFacroty, contentType) {
 
     /**
 	 * The request object factory

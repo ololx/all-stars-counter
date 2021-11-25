@@ -79,6 +79,5 @@ var Counter = function(value = 0) {
 		value = _initial;
 	}
 
-
 	_init(value);
 }
