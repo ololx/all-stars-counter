@@ -22,7 +22,7 @@ var Counter = function(value = 0) {
 	 */
 	this.getValue = function() {
 		return _value;
-	};
+	}
 
 	/**
 	 * Public method for increasing the counter value
@@ -32,7 +32,7 @@ var Counter = function(value = 0) {
 		if (_checkValue(value)) {
 			_value += value;
 		}
-	};
+	}
 
 	/**
 	 * Public method for decreasing the counter value
@@ -42,14 +42,14 @@ var Counter = function(value = 0) {
 		if (_checkValue(value)) {
 			_value -= value;
 		}
-	};
+	}
 
 	/**
 	 * Public method for reseting the counter value to initial
 	 */
 	this.reset = function() {
 		_value += _initial;
-	};
+	}
 	
 	/**
 	 * Private method for checking a value for validity.
@@ -66,8 +66,7 @@ var Counter = function(value = 0) {
 
 		return true;
 		
-	};
-
+	}
 
 	/**
 	 * Private constructor method.
@@ -78,7 +77,7 @@ var Counter = function(value = 0) {
 		}
 
 		value = _initial;
-	};
+	}
 
 
 	_init(value);
