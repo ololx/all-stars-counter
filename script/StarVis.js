@@ -50,7 +50,7 @@ var StarVis = function(body, painter) {
  	this.apply = function(img = null, count = 0) {
  		img.src = 'data:image/svg+xml,' 
 			+ encodeURIComponent(`
-				<svg xmlns="http://www.w3.org/2000/svg" width="165" height="120">
+				<svg xmlns="http://www.w3.org/2000/svg" width="170" height="120">
 					<polygon points = "90,5 30,120 165,50 15,50 150,120" fill = "yellow"/>
 					<text fill="red" font-size="60" font-family="Times New Roman" x="${5 + (165 / 2) - ((29 * `${count}`.length) / 2)}" y="90">${count}</text>
 				</svg>
