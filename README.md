@@ -29,6 +29,7 @@ This is a simple stargazers counter for given users (organizations). The results
 ## 📸 Demo
 
 This picture demonstrate the result of counting the stargazers by `all-stars-counter`.
+
 <img src="https://github.com/ololx/all-stars-counter/blob/assets/demo/demo-1.png?raw=true" align="center" width="50%"/>
 
 ## 🎚 Features
