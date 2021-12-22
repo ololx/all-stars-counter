@@ -2,15 +2,15 @@
 
 This is a simple stargazers counter for given users (organizations). The results are displayed as a star with the number of stars for the repositories. 
 
-[![tag](https://img.shields.io/github/v/tag/ololx/all-stars-counter?style=flat-square&include_prereleases&logo=github)](https://github.com/ololx/all-stars-counter/tags) [![release](https://img.shields.io/github/v/release/ololx/all-stars-counter?style=flat-square&include_prereleases&logo=github)](https://github.com/ololx/all-stars-counter/releases) [![release_date](https://img.shields.io/github/release-date/ololx/all-stars-counter?style=flat-square&logo=github)](https://github.com/ololx/all-stars-counter/releases) [![last_commit](https://img.shields.io/github/last-commit/ololx/all-stars-counter?style=flat-square&logo=github)](https://github.com/ololx/all-stars-counter/commits)
+[![tag](https://img.shields.io/github/v/tag/ololx/all-stars-counter?style=flat&include_prereleases&logo=github)](https://github.com/ololx/all-stars-counter/tags) [![release](https://img.shields.io/github/v/release/ololx/all-stars-counter?style=flat&include_prereleases&logo=github)](https://github.com/ololx/all-stars-counter/releases) [![release_date](https://img.shields.io/github/release-date/ololx/all-stars-counter?style=flat&logo=github)](https://github.com/ololx/all-stars-counter/releases) [![last_commit](https://img.shields.io/github/last-commit/ololx/all-stars-counter?style=flat&logo=github)](https://github.com/ololx/all-stars-counter/commits)
 
-[![codeql_analysis](https://img.shields.io/github/workflow/status/ololx/all-stars-counter/CodeQL?label=CodeQL&logo=github-actions&style=flat-square)](https://github.com/ololx/all-stars-counter/actions/workflows/codeql-analysis.yml)
+[![codeql_analysis](https://img.shields.io/github/workflow/status/ololx/all-stars-counter/CodeQL?label=CodeQL&logo=github-actions&style=flat)](https://github.com/ololx/all-stars-counter/actions/workflows/codeql-analysis.yml)
 
-[![licence](https://img.shields.io/github/license/ololx/all-stars-counter?style=flat-square)](LICENCE)
+[![licence](https://img.shields.io/github/license/ololx/all-stars-counter?style=flat)](LICENCE)
 
-![repo_size](https://img.shields.io/github/repo-size/ololx/all-stars-counter?style=flat-square&logo=github) ![languages_code_size](https://img.shields.io/github/languages/code-size/ololx/all-stars-counter?style=flat-square&logo=github) ![languages_count](https://img.shields.io/github/languages/count/ololx/all-stars-counter?style=flat-square&logo=github) ![languages_top](https://img.shields.io/github/languages/top/ololx/all-stars-counter?style=flat-square&logo=github)
+![repo_size](https://img.shields.io/github/repo-size/ololx/all-stars-counter?style=flat&logo=github) ![languages_code_size](https://img.shields.io/github/languages/code-size/ololx/all-stars-counter?style=flat&logo=github) ![languages_count](https://img.shields.io/github/languages/count/ololx/all-stars-counter?style=flat&logo=github) ![languages_top](https://img.shields.io/github/languages/top/ololx/all-stars-counter?style=flat&logo=github)
 
-[![Java Script](https://img.shields.io/badge/JavaScript-323330?style=flat-square&logo=javascript)](#built-with) [![HTML](https://img.shields.io/badge/HTML-239120?style=flat-square&logo=html5&logoColor=white)](#built-with) [![CSS](https://img.shields.io/badge/CSS-239120?style=flat-square&logo=css3&logoColor=white)](#built-with)
+[![Java Script](https://img.shields.io/badge/JavaScript-323330?style=flat&logo=javascript)](#built-with) [![HTML](https://img.shields.io/badge/HTML-239120?style=flat&logo=html5&logoColor=white)](#built-with) [![CSS](https://img.shields.io/badge/CSS-239120?style=flat&logo=css3&logoColor=white)](#built-with)
 
 ---
 
