@@ -1,18 +1,16 @@
 # all-stars-counter
 
-This is a simple stargazers counter for given users (organizations). The results are displayed as a star with the number of stars for the repositories. 
-
 [![tag](https://img.shields.io/github/v/tag/ololx/all-stars-counter?include_prereleases&logo=github)](https://github.com/ololx/all-stars-counter/tags) [![release](https://img.shields.io/github/v/release/ololx/all-stars-counter?include_prereleases&logo=github)](https://github.com/ololx/all-stars-counter/releases) [![release_date](https://img.shields.io/github/release-date/ololx/all-stars-counter?logo=github)](https://github.com/ololx/all-stars-counter/releases) [![last_commit](https://img.shields.io/github/last-commit/ololx/all-stars-counter?logo=github)](https://github.com/ololx/all-stars-counter/commits)
 
-[![commit_activity](https://img.shields.io/github/commit-activity/y/ololx/all-stars-counter?logo=github)](https://github.com/ololx/all-stars-counter/commits)
+![codeql_analysis](https://github.com/ololx/all-stars-counter/actions/workflows/codeql-analysis.yml/badge.svg) 
 
-[![licence](https://img.shields.io/github/commit-activity/y/ololx/all-stars-counter?logo=github)](LICENCE)
+[![licence](https://img.shields.io/github/license/ololx/all-stars-counter)](LICENCE)
 
 ![repo_size](https://img.shields.io/github/repo-size/ololx/all-stars-counter?logo=github) ![languages_code_size](https://img.shields.io/github/languages/code-size/ololx/all-stars-counter?logo=github) ![languages_count](https://img.shields.io/github/languages/count/ololx/all-stars-counter?logo=github) ![languages_top](https://img.shields.io/github/languages/top/ololx/all-stars-counter?logo=github)
 
 [![Java Script](https://img.shields.io/badge/JavaScript-323330?logo=javascript)](#built-with) [![HTML](https://img.shields.io/badge/HTML-239120?logo=html5&logoColor=white)](#built-with) [![CSS](https://img.shields.io/badge/CSS-239120?&logo=css3&logoColor=white)](#built-with)
 
----
+This is a simple stargazers counter for given users (organizations). The results are displayed as a star with the number of stars for the repositories. 
 
 ## 📇 Table of Contents
 
