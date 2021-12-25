@@ -4,7 +4,7 @@ This is a simple stargazers counter for given users (organizations). The results
 
 [![tag](https://img.shields.io/github/v/tag/ololx/all-stars-counter?style=flat&include_prereleases&logo=github)](https://github.com/ololx/all-stars-counter/tags) [![release](https://img.shields.io/github/v/release/ololx/all-stars-counter?style=flat&include_prereleases&logo=github)](https://github.com/ololx/all-stars-counter/releases)
 
-[![last_commit](https://img.shields.io/github/last-commit/ololx/all-stars-counter?style=flat&logo=github)](https://github.com/ololx/all-stars-counter/commits) [![release_date](https://img.shields.io/github/release-date/ololx/all-stars-counter?style=flat&logo=github)](https://github.com/ololx/all-stars-counter/releases) 
+[![osslifecycle](https://img.shields.io/osslifecycle/ololx/all-stars-counter?style=flat)](OSSMETADATA) [![last_commit](https://img.shields.io/github/last-commit/ololx/all-stars-counter?style=flat&logo=github)](https://github.com/ololx/all-stars-counter/commits) [![release_date](https://img.shields.io/github/release-date/ololx/all-stars-counter?style=flat&logo=github)](https://github.com/ololx/all-stars-counter/releases) 
 
 [![codeql_analysis](https://img.shields.io/github/workflow/status/ololx/all-stars-counter/CodeQL?label=CodeQL&logo=github-actions&style=flat)](https://github.com/ololx/all-stars-counter/actions/workflows/codeql-analysis.yml)
 
