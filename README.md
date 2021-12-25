@@ -14,8 +14,6 @@ This is a simple stargazers counter for given users (organizations). The results
 
 ![Java Script](https://img.shields.io/badge/JavaScript-323330?style=flat&logo=javascript) ![HTML](https://img.shields.io/badge/HTML-239120?style=flat&logo=html5&logoColor=white) ![CSS](https://img.shields.io/badge/CSS-239120?style=flat&logo=css3&logoColor=white)
 
----
-
 ## 📇 Table of Contents
 
 - [About](#about)
